@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.ListFragment">
+
+    <View
+        android:id="@+id/ListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/purple_200"
+        app:layout_constraintHeight_percent="0.2"
+        />
+    <TextView
+        android:id="@+id/ListTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="ToDo App"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:layout_margin="5dp"
+        />
+
+    <ImageView
+        android:id="@+id/NoTaskImage"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/ListRecycleView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ListRecycleView"
+        android:src="@drawable/no_tasks"
+        android:adjustViewBounds="true"
+        android:visibility="gone"
+        />
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/MaterialCalenderView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ListTitle"
+        app:mcv_calendarMode="week"
+        app:mcv_showOtherDates="all"
+        app:mcv_selectionColor="@color/black"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ListRecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MaterialCalenderView"
+        tools:listitem="@layout/todo_item" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

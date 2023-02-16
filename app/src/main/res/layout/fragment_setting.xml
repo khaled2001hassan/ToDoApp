@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.SettingFragment">
+<androidx.cardview.widget.CardView
+    android:id="@+id/SettingView"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintHeight_percent="0.2"
+    android:elevation="5dp"
+    app:cardCornerRadius="50dp">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/purple_200"
+
+        />
+</androidx.cardview.widget.CardView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="6dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        android:background="@color/purple_200"
+
+        />
+
+    <TextView
+        android:id="@+id/SettingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="ToDo App"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:elevation="7dp"
+        android:layout_margin="5dp"
+        />
+
+    <TextView
+        android:id="@+id/LanguageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:text="Language"
+        android:textSize="25dp"
+        android:textColor="@color/purple_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SettingView" />
+
+    <Spinner
+        android:id="@+id/LanguageSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/LanguageTextView"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="50dp"
+        android:background="@color/white"
+        android:layout_marginTop="30dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Setting"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/SettingView"
+        app:layout_constraintTop_toBottomOf="@+id/SettingTitle"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/ModeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:text="Night Mode"
+        android:textSize="25dp"
+        android:textColor="@color/purple_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LanguageSpinner" />
+
+    <ToggleButton
+        android:id="@+id/ModeToggle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="30dp"
+        android:text="Light Mode"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/ModeTextView" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
