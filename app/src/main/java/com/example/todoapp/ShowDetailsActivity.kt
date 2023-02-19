@@ -15,8 +15,8 @@ class ShowDetailsActivity : AppCompatActivity() {
     lateinit var todoTitleView: TextInputLayout
     lateinit var todoDescriptionView: TextInputLayout
     lateinit var dateView: TextView
-    lateinit var UpDateTodoButton: Button
-    lateinit var BackArrow: ImageView
+    lateinit var upDateTodoButton: Button
+    lateinit var backArrow: ImageView
 
     var selectedDay: Calendar = Calendar.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,8 +41,8 @@ class ShowDetailsActivity : AppCompatActivity() {
         todoDescriptionView = findViewById(R.id.DescriptionTextInputView)
         todoTitleView = findViewById(R.id.TitleTextInputView)
         dateView = findViewById(R.id.selectedDateTvView)
-        UpDateTodoButton = findViewById(R.id.UpDateTodoButton)
-        BackArrow = findViewById(R.id.BackArrow)
+        upDateTodoButton = findViewById(R.id.UpDateTodoButton)
+        backArrow = findViewById(R.id.BackArrow)
     }
 
     fun initListener(idThis: Int) {
@@ -60,7 +60,7 @@ class ShowDetailsActivity : AppCompatActivity() {
             dialog.show()
         }
 
-        UpDateTodoButton.setOnClickListener {
+        upDateTodoButton.setOnClickListener {
             if (!isValid()) return@setOnClickListener
             selectedDay.clear(Calendar.SECOND)
             selectedDay.clear(Calendar.MILLISECOND)
@@ -78,7 +78,7 @@ class ShowDetailsActivity : AppCompatActivity() {
             setResult(1)
             finish()
         }
-        BackArrow.setOnClickListener {
+        backArrow.setOnClickListener {
             finish()
         }
 
