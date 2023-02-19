@@ -14,7 +14,7 @@ class HomeActivity : AppCompatActivity() {
     lateinit var bottomNavigation :BottomNavigationView
     lateinit var fab : FloatingActionButton
     var listFragment = ListFragment()
-    private val showDetailsActivity=ShowDetailsActivity()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -31,13 +31,6 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
-        showDetailsActivity.onUpdateClick= object :ShowDetailsActivity.OnUpdateClick{
-            override fun onClickUpDate() {
-                listFragment.refreshTodos()
-                Log.e("onClickUpDate: ","refreshTodos" )
-            }
-
-        }
         ShowFragment(listFragment)
         bottomNavigation.setOnItemSelectedListener {TwoItem->
 

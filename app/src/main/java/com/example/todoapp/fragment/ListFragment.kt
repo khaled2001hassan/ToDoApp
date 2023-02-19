@@ -49,6 +49,12 @@ class ListFragment : Fragment() {
 
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 1){
+            refreshTodos()
+        }
+    }
     fun initListener() {
         calenderView.selectedDate = CalendarDay.today()
         adapter.onImageClick = object : Adapter_setting.OnImgeClick {
@@ -68,12 +74,13 @@ class ListFragment : Fragment() {
                 intent.putExtra("description", todoClick.description)
                 intent.putExtra("date", date)
                 intent.putExtra("id",stringId)
-                startActivity(intent)
+                startActivityForResult(intent, 1)
 
 
             }
 
         }
+
         calenderView.setOnDateChangedListener(object : OnDateSelectedListener{
             override fun onDateSelected(
                 widget: MaterialCalendarView,
